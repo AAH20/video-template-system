@@ -15,6 +15,9 @@ output/
 *.tmp
 *.temp
 
+# Keep sample videos for demonstration
+!samples/
+
 # Generated files
 *.log
 *.pid
