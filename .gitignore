@@ -99,18 +99,20 @@ Thumbs.db
 *.swo
 *~
 
-# Video files (large)
+# Video files (large) - but keep samples
 *.mp4
 *.avi
 *.mov
 *.mkv
 *.webm
 *.gif
+!samples/*.mp4
 
-# Image files
+# Image files - but keep samples
 *.png
 *.jpg
 *.jpeg
 *.gif
 *.bmp
-*.svg 
+*.svg
+!samples/*.png 
