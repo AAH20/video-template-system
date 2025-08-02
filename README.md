@@ -50,6 +50,16 @@ npm install
 
 ## Usage
 
+### Quick Video Generation
+```bash
+# Generate a video with default settings
+node generate-video.js
+
+# See all options
+node generate-video.js --help
+```
+
+### Development Commands
 ```bash
 # Build the project
 npm run build
@@ -65,6 +75,21 @@ npm test
 ```
 
 ## Quick Start
+
+### Option 1: Quick Generator Script (Recommended for beginners)
+
+```bash
+# Generate a video with default settings
+node generate-video.js
+
+# Generate a custom video
+node generate-video.js --title "My Product" --subtitle "Amazing Features" --output my-video.mp4
+
+# Generate high-quality video
+node generate-video.js --quality high --title "Premium Product" --subtitle "Revolutionary Innovation"
+```
+
+### Option 2: TypeScript API
 
 ```typescript
 import VideoTemplateSystem from './src/index';
