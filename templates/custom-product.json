@@ -1,0 +1,91 @@
+{
+  "name": "Custom Product Intro",
+  "description": "A custom product introduction template",
+  "duration": 10,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "intro",
+      "duration": 3,
+      "backgroundColor": "#1a1a1a",
+      "elements": [
+        {
+          "type": "text",
+          "content": "{{productName}}",
+          "position": {
+            "x": 540,
+            "y": 600
+          },
+          "style": {
+            "fontSize": 72,
+            "color": "#ffffff",
+            "fontFamily": "Arial, sans-serif",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          },
+          "animation": {
+            "type": "fadeIn",
+            "duration": 1,
+            "easing": "easeOut"
+          }
+        }
+      ]
+    },
+    {
+      "id": "description",
+      "duration": 4,
+      "backgroundColor": "#1a1a1a",
+      "elements": [
+        {
+          "type": "text",
+          "content": "{{tagline}}",
+          "position": {
+            "x": 540,
+            "y": 700
+          },
+          "style": {
+            "fontSize": 48,
+            "color": "#00ff88",
+            "fontFamily": "Arial, sans-serif",
+            "textAlign": "center"
+          },
+          "animation": {
+            "type": "slideIn",
+            "duration": 1.5,
+            "delay": 0.5,
+            "easing": "easeOut"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "duration": 3,
+      "backgroundColor": "#1a1a1a",
+      "elements": [
+        {
+          "type": "text",
+          "content": "{{ctaText}}",
+          "position": {
+            "x": 540,
+            "y": 800
+          },
+          "style": {
+            "fontSize": 36,
+            "color": "#ffffff",
+            "fontFamily": "Arial, sans-serif",
+            "textAlign": "center"
+          },
+          "animation": {
+            "type": "scaleIn",
+            "duration": 1,
+            "delay": 0.5,
+            "easing": "easeOut"
+          }
+        }
+      ]
+    }
+  ]
+}

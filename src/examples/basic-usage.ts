@@ -81,11 +81,11 @@ async function customTemplateExample() {
                 fontWeight: "bold",
                 textAlign: "center" as const
               },
-              animation: {
-                type: "fadeIn",
-                duration: 1,
-                easing: "easeOut"
-              }
+                             animation: {
+                 type: "fadeIn" as const,
+                 duration: 1,
+                 easing: "easeOut" as const
+               }
             }
           ]
         },
@@ -104,12 +104,12 @@ async function customTemplateExample() {
                 fontFamily: "Arial, sans-serif",
                 textAlign: "center" as const
               },
-              animation: {
-                type: "slideIn",
-                duration: 1.5,
-                delay: 0.5,
-                easing: "easeOut"
-              }
+                             animation: {
+                 type: "slideIn" as const,
+                 duration: 1.5,
+                 delay: 0.5,
+                 easing: "easeOut" as const
+               }
             }
           ]
         },
@@ -128,12 +128,12 @@ async function customTemplateExample() {
                 fontFamily: "Arial, sans-serif",
                 textAlign: "center" as const
               },
-              animation: {
-                type: "scaleIn",
-                duration: 1,
-                delay: 0.5,
-                easing: "easeOut"
-              }
+                             animation: {
+                 type: "scaleIn" as const,
+                 duration: 1,
+                 delay: 0.5,
+                 easing: "easeOut" as const
+               }
             }
           ]
         }

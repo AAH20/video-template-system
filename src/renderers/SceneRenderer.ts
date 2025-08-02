@@ -24,14 +24,14 @@ export class SceneRenderer {
   }
 
   private renderElement(element: Element, timeInScene: number): void {
-    const animationProgress = this.calculateAnimationProgress(element.animation, timeInScene);
+    const animationProgress = this.calculateAnimationProgress(timeInScene, element.animation);
     
     if (animationProgress === 0) return; // Element not visible yet
 
     this.ctx.save();
     
     // Apply animation transformations
-    this.applyAnimation(element.animation, animationProgress);
+    this.applyAnimation(animationProgress, element.animation);
 
     switch (element.type) {
       case 'text':
@@ -140,7 +140,7 @@ export class SceneRenderer {
     }
   }
 
-  private calculateAnimationProgress(animation?: Animation, timeInScene: number): number {
+  private calculateAnimationProgress(timeInScene: number, animation?: Animation): number {
     if (!animation) return 1;
 
     const startTime = animation.delay || 0;
@@ -166,7 +166,7 @@ export class SceneRenderer {
     }
   }
 
-  private applyAnimation(animation?: Animation, progress: number): void {
+  private applyAnimation(progress: number, animation?: Animation): void {
     if (!animation) return;
 
     switch (animation.type) {

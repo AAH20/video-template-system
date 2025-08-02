@@ -1,4 +1,4 @@
-import * as ffmpeg from 'fluent-ffmpeg';
+import ffmpeg from 'fluent-ffmpeg';
 import * as fs from 'fs-extra';
 import * as path from 'path';
 import { SceneRenderer } from '../renderers/SceneRenderer';
@@ -10,10 +10,9 @@ export class VideoGenerator {
 
   constructor(config: VideoGeneratorConfig = {}) {
     this.config = {
-      ffmpegPath: config.ffmpegPath,
+      ...config,
       tempDir: config.tempDir || path.join(process.cwd(), 'temp'),
-      maxConcurrency: config.maxConcurrency || 4,
-      ...config
+      maxConcurrency: config.maxConcurrency || 4
     };
     this.tempDir = this.config.tempDir!;
   }
@@ -137,7 +136,7 @@ export class VideoGenerator {
           console.log('Video generation completed successfully');
           resolve(outputPath);
         })
-        .on('error', (err) => {
+        .on('error', (err: any) => {
           console.error('Error during video generation:', err);
           reject(err);
         })
@@ -182,7 +181,7 @@ export class VideoGenerator {
     sceneIndex: number = 0
   ): Promise<string> {
     const renderer = new SceneRenderer(template.width, template.height);
-    const scene = this.applyDataToScene(template.scenes[sceneIndex], data);
+    const scene = this.applyDataToScene(template.scenes[sceneIndex]!, data);
     
     // Render middle frame of the scene
     const middleTime = scene.duration / 2;

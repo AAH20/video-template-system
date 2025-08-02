@@ -159,7 +159,7 @@ describe('TemplateManager', () => {
       
       const results = templateManager.searchTemplates('test');
       expect(results).toHaveLength(1);
-      expect(results[0].name).toBe('Test Template');
+      expect(results[0]?.name).toBe('Test Template');
     });
 
     it('should find templates by description', async () => {
@@ -167,7 +167,7 @@ describe('TemplateManager', () => {
       
       const results = templateManager.searchTemplates('test template');
       expect(results).toHaveLength(1);
-      expect(results[0].description).toBe('A test template');
+      expect(results[0]?.description).toBe('A test template');
     });
   });
 }); 

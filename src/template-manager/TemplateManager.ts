@@ -60,6 +60,10 @@ export class TemplateManager {
   public async deleteTemplate(name: string): Promise<boolean> {
     try {
       const templatePath = path.join(this.templatesDir, `${name}.json`);
+      const exists = await fs.pathExists(templatePath);
+      if (!exists) {
+        return false;
+      }
       await fs.remove(templatePath);
       this.templates.delete(name);
       console.log(`Template '${name}' deleted successfully`);
@@ -169,7 +173,7 @@ export class TemplateManager {
       // Apply color scheme to template
       template.scenes = template.scenes.map(scene => ({
         ...scene,
-        backgroundColor: data.colors?.background || scene.backgroundColor,
+        backgroundColor: data.colors?.background || scene.backgroundColor || '#000000',
         elements: scene.elements.map(element => {
           if (element.type === 'text' && element.style) {
             return {
